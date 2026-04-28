@@ -37,39 +37,38 @@ If you are working in Google Colab:
 
 | Field | Details |
 |---|---|
-| **Project Title** | _To be filled by team_ |
-| **Sector** | _e.g. Retail, Finance, Healthcare, EdTech_ |
-| **Team ID** | _e.g. DVA-B1-T3_ |
-| **Section** | _To be filled by team_ |
-| **Faculty Mentor** | _To be filled by team_ |
+| **Project Title** | Customer Spending Analysis |
+| **Sector** | Finance |
+| **Team ID** | C-6 |
+| **Section** | C |
+| **Faculty Mentor** | _[To be provided]_ |
 | **Institute** | Newton School of Technology |
-| **Submission Date** | _To be filled by team_ |
+| **Submission Date** | _[To be provided]_ |
 
 ### Team Members
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | _Name_ | `github-handle` |
-| Data Lead | _Name_ | `github-handle` |
-| ETL Lead | _Name_ | `github-handle` |
-| Analysis Lead | _Name_ | `github-handle` |
-| Visualization Lead | _Name_ | `github-handle` |
-| Strategy Lead | _Name_ | `github-handle` |
-| PPT and Quality Lead | _Name_ | `github-handle` |
+| Project Lead | Veer Shah | `VeerShah41` |
+| Data Lead | Meet Ramatri | `MeetRamatri` |
+| Analysis Lead | Archit Raj | `araj2210` / `raj.ar` |
+| Visualization Lead | _[To be provided]_ | _[To be provided]_ |
+| Strategy Lead | _[To be provided]_ | _[To be provided]_ |
+| PPT and Quality Lead | _[To be provided]_ | _[To be provided]_ |
 
 ---
 
 ## Business Problem
 
-_Describe the sector context, the decision-maker this project serves, and the core business challenge being addressed. Keep this to 3-5 sentences written in plain language, as if addressing a senior stakeholder._
+Financial institutions face the challenge of accurately assessing creditworthiness while understanding modern consumer behavior. This project aims to analyze customer spending patterns to gain insights into financial stability and integrate these findings with loan risk assessment models. By leveraging data-driven extraction and statistical analysis, we seek to predict potential default risks and provide actionable insights for optimized lending strategies.
 
 **Core Business Question**
 
-> _State the single main question your Tableau dashboard and Python analysis will answer._
+> How do customer spending patterns, demographics, and transaction velocity impact their probability of loan default, and how can we use these signals to mitigate credit risk?
 
 **Decision Supported**
 
-> _What action or decision will this analysis enable the stakeholder to take?_
+> Implementing dynamic loan-to-balance restrictions and real-time monitoring of withdrawal-to-deposit ratios to cap lending principal and establish early warning systems for defaults.
 
 ---
 
@@ -77,21 +76,21 @@ _Describe the sector context, the decision-maker this project serves, and the co
 
 | Attribute | Details |
 |---|---|
-| **Source Name** | _e.g. World Bank, data.gov.in, Kaggle (raw only)_ |
-| **Direct Access Link** | _Paste the direct download or access URL_ |
-| **Row Count** | _Must be greater than 5,000_ |
-| **Column Count** | _Must be greater than 8 meaningful columns_ |
-| **Time Period Covered** | _e.g. Jan 2019 to Dec 2023_ |
-| **Format** | _e.g. CSV, JSON, Excel_ |
+| **Source Name** | Synthetic Finance Dataset (TestDataBox) |
+| **Direct Access Link** | https://testdatabox.com/?utm_source=kaggle |
+| **Row Count** | 50,000+ |
+| **Column Count** | 15+ (across 8 tables) |
+| **Time Period Covered** | _[To be provided]_ |
+| **Format** | CSV |
 
 **Key Columns Used**
 
 | Column Name | Description | Role in Analysis |
 |---|---|---|
-| _column_1_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_2_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_3_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_4_ | _What it means_ | _Used for KPI / filter / segmentation_ |
+| `transaction_id` | Unique identifier for each transaction | Used for calculating transaction frequency |
+| `loan_status_id` | Current status of the loan | Target variable for default risk |
+| `amount` | Transaction value | Used to compute deposit/withdrawal ratios |
+| `balance` | Account balance | Used for loan-to-balance ratio computation |
 
 For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
@@ -126,14 +125,14 @@ Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) an
 
 _List 8-12 major findings from the analysis, written in decision language. Each insight should tell the reader what to think or act upon, not merely describe a chart._
 
-1. _Insight 1_
-2. _Insight 2_
-3. _Insight 3_
-4. _Insight 4_
-5. _Insight 5_
-6. _Insight 6_
-7. _Insight 7_
-8. _Insight 8_
+1. Customers entering the 'Overdue' phase exhibit vastly different Loan-to-Balance ratios compared to current loans.
+2. Age and Customer Type significantly alter default probabilities based on Chi-Square statistical tests.
+3. Defaulters show a statistically significant difference in withdrawal vs deposit behavior prior to default.
+4. A customer's banking velocity and debt ratio are strong indicators of future stability.
+5. Transaction frequency is directly correlated with default risk (confirmed via T-Test).
+6. _[To be provided]_
+7. _[To be provided]_
+8. _[To be provided]_
 
 ---
 
@@ -143,9 +142,9 @@ _Provide 3-5 specific, actionable business recommendations, each linked directly
 
 | # | Insight | Recommendation | Expected Impact |
 |---|---|---|---|
-| 1 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 2 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 3 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
+| 1 | Loan-to-Balance Ratios (Insight 1) | Implement a hard cap on lending principal based on historical cash reserves. | Reduce loss from default by restricting principal for risky accounts. |
+| 2 | Demographic Risk (Insight 2) | Target the lowest-risk age brackets and customer types with premium loan products. | Increase loan portfolio profitability and reduce overall default rate. |
+| 3 | Withdrawal behavior (Insight 3) | Monitor a customer's 'Withdrawal-to-Deposit' ratio as a real-time early warning system. | Allow proactive intervention before a loan formally defaults. |
 
 ---
 
