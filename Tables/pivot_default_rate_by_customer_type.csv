@@ -1,0 +1,4 @@
+TypeName_Customer,Total_Loans,Default_Rate
+Individual,121,0.09917355371900827
+Large Enterprise,127,0.11023622047244094
+Small Business,100,0.11
